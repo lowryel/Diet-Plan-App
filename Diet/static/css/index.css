@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 30px;
+    margin: 30px;
+    background:linear-gradient(to bottom, rgb(177, 228, 212), rgb(196, 238, 198), rgb(227, 185, 243));
+}
+#Header{
+   text-align: right;
+   display: inline;
+}
+.User-Message{
+    display: inline-flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    line-height: 50px;
+    color: brown;
+    font-weight: bold;
+    font-size: larger;
+}
+.User-Message h3{
+    margin-right: 50px;
+}
+
+.NavList{
+    display: inline-flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.NavList li a{
+    width: 80px;
+    text-align: right;
+    margin: 20px;
+    text-decoration:none;
+    color: brown;
+    border: 2px solid rgb(245, 237, 215);
+    box-shadow: 4px 8px 6px 3px #8f8e8e;
+}
+.NavList li a:hover{
+    background-color:rgba(214, 236, 227, 0.596);
+    border: none;
+    transform: translate3d(-0.5%);
+    transition: 0.5s;
+    color: rgb(253, 157, 14);
+    box-shadow: 4px 8px 6px 3px #9c9c9c00;
+    text-decoration: overline;
+}
+.NavList li{
+    
+    list-style:none;
+}
+.user-info{
+    width: 100%;
+    display: inline-flex;
+    justify-items: center;
+}
+.form-input{
+    margin: 5px;
+    width: 150px;
+    height: 120px;
+    text-align: center;
+    /* border: 2px solid red; */
+    cursor: pointer;
+    background: rgb(65, 64, 64);
+    color: whitesmoke;
+    border-radius: 15% 15% 50% 50%;
+}
+.form-input:hover{
+    background: rgb(253, 255, 255);
+    color: rgb(24, 5, 5);
+    border-radius: 15% 15% 50% 50%;
+    transition: 0.7s;
+    transform: skewY(0.5%);
+    translate: 5%;
+}
+.form-input h4{
+    margin-top: 20%;
+}
+hr{
+    color: wheat;
+    margin-top: 50px;
+    width: 30%;
+}
+.BMI-Index{
+    margin-left: 40%;
+    width: 200px;
+    height: 100px;
+    /* border: 2px solid rgb(230, 83, 64); */
+    background: rgb(241, 211, 241);
+}
+.BMI-Index:hover{
+    background: rgb(252, 252, 252);
+    transform: skewY(0.5%);
+    translate: 5%;
+    transition: 0.5s;
+}
+.BMI-Index h4, p{
+    text-align: center;
+    margin: 20px;
+}

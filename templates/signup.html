@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body style="background: linear-gradient(to bottom, rgb(236, 222, 176), rgb(183, 220, 226), rgb(236, 212, 235));">
+    <center>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+        <div style="background: linear-gradient(to bottom, rgb(236, 222, 176), rgb(183, 220, 226), rgb(236, 212, 235));">
+            <form action="signup", method="POST">
+                {% csrf_token %}
+                <p>Username</p>
+                <input type="text", name="Username"><br><br>
+                <p>Email</p>
+                <input type="email", name="Email"><br><br>
+                <p>Password</p>
+                <input type="password", name="Password"><br><br>
+                <p>Password2</p>
+                <input type="password", name="Password2"><br><br>
+                <input type="submit", value="Submit">
+            </form>
+        </div>
+    </center>
+</body>
+</html>
