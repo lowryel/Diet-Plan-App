@@ -27,11 +27,15 @@
         
         <div class="NavBar">
             <ul class="NavList">
+                
                 <li><a href="{% url 'fill_form'%}">Fill this form</a></li>
                 <li><a href="{% url 'logout'%}">Logout</a></li>
                 <li><a href="{% url 'login'%}">Login here</a></li>
+                {% for user in users %}
                 <li><a href="{% url 'update_info'%}">Update</a></li>
+                {% endfor %}
                 <li><a href="{% url 'signup'%}">Signup here</a></li>
+                
             </ul> 
         </div>
         

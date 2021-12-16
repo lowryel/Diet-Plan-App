@@ -38,11 +38,14 @@ def index(request):
 
 def update_info(request):
     if request.user.is_authenticated:
-        form_items= fill_formModel.objects.get(id=10)
-        form = fill_formForm(request.POST or None, instance=form_items)
-        if form.is_valid():
-            form.save()
-            return redirect('index')
+        users = User.objects.all()
+        for user in users:
+            print(user.id, user.username)
+            form_items= fill_formModel.objects.get(user=user.id)
+            form = fill_formForm(request.POST or None, instance=form_items)
+            if form.is_valid():
+                form.save()
+                return redirect('index')
 
     context={
         'form':form

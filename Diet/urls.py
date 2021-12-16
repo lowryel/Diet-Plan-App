@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^login', login, name='login'),
     url(r'^fill_form', fill_form, name='fill_form'),
     url(r'^logout', logout, name='logout'),
-    url(r'^update_info', update_info, name='update_info'),
+    url(r'^update_info/', update_info, name='update_info'),
 ]
 
 if settings.DEBUG:
