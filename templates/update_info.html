@@ -10,35 +10,7 @@
     <h2>Update Info Page</h2>
     <form action="", method="POST">
         {% csrf_token %}
-        {{form}}
-
-        <label for="Gender">Gender</label>
-        <select id="Gender", name="gender">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Active">Other</option>
-        </select><br><br>
-
-        <label for="Lifestyle">LifeStyle</label>
-        <select id="Lifestyle", name="lifestyle">
-            <option value="Sedentary">Sedentary</option>
-            <option value="Moderately active">Moderately active</option>
-            <option value="Active">Active</option>
-        </select><br><br>
-
-        <label for="Goals">Goals</label>
-        <select id="Goals", name="goals">
-            <option value="Weight loss">Weight loss</option>
-            <option value="Muscle gain">Muscle gain</option>
-            <option value="Healthy eating">Healthy eating</option>
-        </select><br><br>
-
-        <label for="Foods">Food Preference</label>
-        <select id="Foods", name="foods">
-            <option value="Vegetarian">Vegetarian</option>
-            <option value="Non-Vegetarian">Non-Vegetarian</option>
-            <option value="Vegan">Vegan</option>
-        </select><br><br>
+        <p>{{form}}</p><br>
         <input type="submit">
     </form>
 </body>
