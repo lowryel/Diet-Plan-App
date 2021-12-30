@@ -31,26 +31,28 @@ body{
     flex-wrap: wrap;
 }
 .NavList li a{
-    width: 80px;
-    text-align: right;
-    margin: 20px;
+    text-align: center;
     text-decoration:none;
-    color: brown;
-    border: 2px solid rgb(245, 237, 215);
-    box-shadow: 4px 8px 6px 3px #8f8e8e;
+    color: rgb(14, 10, 10);
 }
 .NavList li a:hover{
-    background-color:rgba(214, 236, 227, 0.596);
-    border: none;
+    color:rgb(20, 13, 13);
+}
+
+.NavList li:hover{
+    background: whitesmoke;
     transform: translate3d(-0.5%);
     transition: 0.5s;
-    color: rgb(253, 157, 14);
-    box-shadow: 4px 8px 6px 3px #9c9c9c00;
-    text-decoration: overline;
+    box-shadow: 4px 8px 6px 3px #29252500;
 }
 .NavList li{
-    
+    width: 120px;
+    text-align: center;
+    margin: 20px;
+    color: rgb(5, 4, 4);
+    background: rgba(206, 147, 147, 0.541);
     list-style:none;
+    border-radius: 15px;
 }
 .user-info{
     width: 100%;

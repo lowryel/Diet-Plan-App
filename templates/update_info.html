@@ -8,10 +8,25 @@
 </head>
 <body>
     <h2>Update Info Page</h2>
-    <form action="", method="POST">
-        {% csrf_token %}
-        <p>{{form}}</p><br>
-        <input type="submit">
-    </form>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    <form action="", method="POST">
+                    {% csrf_token %}
+                    <p>{{form}}</p><br><br>
+                    <input type="submit">
+                    <table>
+                        <thead>
+                            
+                        </thead>
+
+                    </table>
+
+                    </form>
+                </td>
+            </tr>
+        </thead>
+    </table>
 </body>
 </html>

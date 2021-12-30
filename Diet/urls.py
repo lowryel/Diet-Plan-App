@@ -13,20 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.urls import include, path
 from django.contrib import admin
 from diet_planapp.views import *
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^index', index, name='index'),
-    url(r'^signup', signup, name='signup'),
-    url(r'^login', login, name='login'),
-    url(r'^fill_form', fill_form, name='fill_form'),
-    url(r'^logout', logout, name='logout'),
-    url(r'^update_info/', update_info, name='update_info'),
+    path(r'admin/', admin.site.urls),
+    path(r'index', index, name='index'),
+    path(r'signup', signup, name='signup'),
+    path(r'login', login, name='login'),
+    path(r'fill_form/', fill_form, name='fill_form'),
+    path(r'logout', logout, name='logout'),
+    path(r'update_info/', update_info, name='update_info'),
 ]
 
 if settings.DEBUG:
@@ -34,3 +34,4 @@ if settings.DEBUG:
         static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns = urlpatterns + \
         static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

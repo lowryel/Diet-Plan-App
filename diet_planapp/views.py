@@ -1,9 +1,9 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from .models import *
 from .forms import fill_formForm
-
 # Create your views here.
 
 def fill_form(request):
@@ -19,6 +19,7 @@ def fill_form(request):
         fill_form = fill_formModel.objects.create(
             age=age, weight=weight, height=height, weekly_budget=weekly_budget, gender=gender, lifestyle=lifestyle, goals=goals, foods=foods
     )
+        fill_form.save()
         messages.success(request, "Form Data submitted Successfully")
         return redirect('index')
     else:
@@ -26,26 +27,28 @@ def fill_form(request):
 
 
 def index(request):
-    
-    form_items, created= fill_formModel.objects.get_or_create(user=request.user)
-    BMI =form_items.weight / (form_items.height*form_items.height)
-    
-    context= {
-        'form_items':form_items,
-        'bmi':BMI
-    }
-    return render(request, 'index.html', context)
+    try:
+        form_items, created= fill_formModel.objects.get_or_create(user=request.user)
+        BMI =form_items.weight / (form_items.height*form_items.height)
+        
+        context= {
+            'form_items':form_items,
+            'bmi':BMI
+        } 
+        return render(request, 'index.html', context)
+    except:
+        # if request.user.is_authenticated is None:
+        return redirect('login')
+
+           
+
 
 def update_info(request):
-    if request.user.is_authenticated:
-        users = User.objects.all()
-        for user in users:
-            print(user.id, user.username)
-            form_items= fill_formModel.objects.get(user=user.id)
-            form = fill_formForm(request.POST or None, instance=form_items)
-            if form.is_valid():
-                form.save()
-                return redirect('index')
+    form_items= fill_formModel.objects.get(user=request.user)
+    form = fill_formForm(request.POST or None, instance=form_items)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
 
     context={
         'form':form

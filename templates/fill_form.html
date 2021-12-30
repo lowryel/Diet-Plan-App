@@ -11,46 +11,62 @@
     <center>
         <h4>Fill The Form Below</h4>
         <hr>
-        <form action="", method="POST">
-            {% csrf_token %}
-            <input type="text", name="user" placeholder="User"><br>
-            <input type="text", name="age" placeholder="Age"><br>
-            <input type="text", name="weight" placeholder="Weight in kg"><br>
-            <input type="text", name="height" placeholder="height in meters(m)"><br>
-            <input type="text", name="weekly_budget" placeholder="Weekly Budget"<br><br>
+        <table>
+            <thead>
+                <th>
+                    <tr>
+                        <form action="", method="POST">
+                            {% csrf_token %}
+                            <input type="text", name="user" placeholder="User"><br>
+                            <input type="text", name="age" placeholder="Age"><br>
+                            <input type="text", name="weight" placeholder="Weight in kg"><br>
+                            <input type="text", name="height" placeholder="height in meters(m)"><br>
+                            <input type="text", name="weekly_budget" placeholder="Weekly Budget"<br><br>
 
-            <label for="Gender">Select a gender:</label>
-            <select id="Gender", name="gender">
-                <option value="Female">Female</option>
-                <option value="Male">Male</option>
-                <option value="Other">Other</option>
-            </select><br><br>
+                            <label for="Gender">Select a gender:</label>
+                            <select id="Gender", name="gender">
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Other">Other</option>
+                            </select><br><br>
 
-            <label for="Lifestyle">Choose a car:</label>
-            <select id="Lifestyle", name="lifestyle">
-                <option value="Sedentary">Sedentary</option>
-                <option value="Moderately active">Moderately active</option>
-                <option value="Active">Active</option>
-            </select><br><br>
+                            <label for="Lifestyle">Choose a car:</label>
+                            <select id="Lifestyle", name="lifestyle">
+                                <option value="Sedentary">Sedentary</option>
+                                <option value="Moderately active">Moderately active</option>
+                                <option value="Active">Active</option>
+                            </select><br><br>
 
-            <label for="Goals">Goals</label>
-            <select id="Goals", name="goals">
-                <option value="Weight loss">Weight loss</option>
-                <option value="Muscle gain">Muscle gain</option>
-                <option value="Healthy eating">Healthy eating</option>
-            </select><br><br>
+                            <tr>
+                                <label for="Goals">Goals</label>
+                                <select id="Goals", name="goals">
+                                <option value="Weight loss">Weight loss</option>
+                                <option value="Muscle gain">Muscle gain</option>
+                                <option value="Healthy eating">Healthy eating</option>
+                                </select><br><br>
+                            </tr>
+                            <tr>
+                                <tr>
+                                    <label for="Foods">Select Food Preference:</label>
+                                </tr>
+                                
+                                <select id="Foods", name="foods">
+                                <option value="Vegetarian">Vegetarian</option>
+                                <option value="Non-Vegetarian">Non-Vegetarian</option>
+                                <option value="Vegan">Vegan</option>
+                                </select><br><br>
+                                <input type="submit">
+                            </tr>
 
-            <label for="Foods">Select Food Preference</label>
-            <select id="Foods", name="foods">
-                <option value="Vegetarian">Vegetarian</option>
-                <option value="Non-Vegetarian">Non-Vegetarian</option>
-                <option value="Vegan">Vegan</option>
-            </select><br><br>
-            <input type="submit">
-        </form>
-        {% for message in messages %}
-        <h3>{{message}}</h3>
-        {% endfor %}
+                        </form>
+                        {% for message in messages %}
+                        <h3>{{message}}</h3>
+                        {% endfor %}
+                    </tr>
+                </th>
+            </thead>
+        </table>
+
     </center>
 </body>
 </html>
