@@ -12,4 +12,7 @@ class fill_formModel(models.Model):
     lifestyle = models.CharField(max_length=50, blank=False)
     goals = models.CharField(max_length=50, blank=False)
     foods = models.CharField(max_length=50, blank=False)
+    is_active=models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.user.username

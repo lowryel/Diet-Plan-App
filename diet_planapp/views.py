@@ -28,7 +28,7 @@ def fill_form(request):
 
 def index(request):
     try:
-        form_items, created= fill_formModel.objects.get_or_create(user=request.user)
+        form_items= fill_formModel.objects.get(user=request.user)
         BMI =form_items.weight / (form_items.height*form_items.height)
         
         context= {
@@ -36,7 +36,7 @@ def index(request):
             'bmi':BMI,
         } 
         return render(request, 'index.html', context)
-    except:
+    except form_items.DoesNotExist:
         return redirect('login')
 
 
