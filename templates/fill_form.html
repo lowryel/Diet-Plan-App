@@ -1,3 +1,5 @@
+{% extends 'index.html' %}
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -7,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Diet Plan</title>
 </head>
+{% block content %}
 <body style="background: linear-gradient(to bottom, rgb(236, 222, 176), rgb(183, 220, 226), rgb(236, 212, 235));">
     <center>
         <h4>Fill The Form Below</h4>
@@ -17,7 +20,7 @@
                     <tr>
                         <form action="", method="POST">
                             {% csrf_token %}
-                            <input type="text", name="user" placeholder="User"><br>
+                            <!-- <input type="text", name="user" placeholder="User"><br> -->
                             <input type="text", name="age" placeholder="Age"><br>
                             <input type="text", name="weight" placeholder="Weight in kg"><br>
                             <input type="text", name="height" placeholder="height in meters(m)"><br>
@@ -66,7 +69,7 @@
                 </th>
             </thead>
         </table>
-
-    </center>
+    </center>    
 </body>
+{% endblock content %}
 </html>

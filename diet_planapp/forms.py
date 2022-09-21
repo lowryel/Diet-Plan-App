@@ -5,7 +5,14 @@ class fill_formForm(ModelForm):
     class Meta:
         model = fill_formModel
         fields=[
-            'age', 'height', 'weight', 'weekly_budget', 'gender', 'lifestyle', 'goals', 'foods'
+            'age',
+            'height', 
+            'weight', 
+            'weekly_budget', 
+            'gender', 
+            'lifestyle', 
+            'goals', 
+            'foods'
         ]
 
 

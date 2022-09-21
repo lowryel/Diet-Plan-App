@@ -33,14 +33,11 @@ def index(request):
         
         context= {
             'form_items':form_items,
-            'bmi':BMI
+            'bmi':BMI,
         } 
         return render(request, 'index.html', context)
     except:
-        # if request.user.is_authenticated is None:
         return redirect('login')
-
-           
 
 
 def update_info(request):

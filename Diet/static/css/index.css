@@ -6,7 +6,7 @@
 body{
     padding: 30px;
     margin: 30px;
-    background:linear-gradient(to bottom, rgb(177, 228, 212), rgb(196, 238, 198), rgb(227, 185, 243));
+    background:linear-gradient(to bottom, rgb(177, 228, 212), rgb(196, 238, 198), rgb(227, 185, 243)), no-repeat;
 }
 #Header{
    text-align: right;

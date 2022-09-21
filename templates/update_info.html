@@ -14,15 +14,8 @@
                 <td>
                     <form action="", method="POST">
                     {% csrf_token %}
-                    <p>{{form}}</p><br><br>
-                    <input type="submit">
-                    <table>
-                        <thead>
-                            
-                        </thead>
-
-                    </table>
-
+                    <tr>{{form.as_table}}</tr>
+                    <tr><input type="submit"></tr>
                     </form>
                 </td>
             </tr>
